@@ -1,0 +1,183 @@
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 20px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: orange;
+  color: black;
+}
+
+.header a.active {
+  background-color: orange;
+  color: black;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+
+/* TABELA */
+
+.tituloStyle{
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.tabela {
+  border-collapse:collapse;
+  padding:5px;
+}
+
+.table-bg{
+  background:rgba(0, 0, 0, 0);
+  text-align: center;
+}
+
+.tabela th {
+  border:1px solid #000000;
+  background:rgb(0, 0, 0);
+  padding:5px;
+  background:#00000000;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.tabela td {
+  border:1px solid #C0C0C0; /* #C0C0C0 */
+  background:rgba(0, 0, 0, 0);
+  padding:5px;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* STYLE BARRA PESQUISA  */
+
+:focus{outline: none;}
+
+.label { 
+  margin-left: 32%;
+  float: left; 
+  width: 30%; 
+  margin-bottom: 25px; 
+  position: relative;
+  margin-top: 12px;
+
+}
+
+.input-bordas{
+  
+  font: 15px/24px "Lato", Arial, sans-serif; 
+  color: #333; 
+  width: 100%; 
+  box-sizing: border-box; 
+  letter-spacing: 1px;
+  border: 1px solid #ccc; 
+  padding: 7px 14px 9px; 
+  transition: 0.4s;
+
+}
+
+.textarea { resize:none!important; }
+
+.input-bordas ~ .focus-border:before,
+.input-bordas ~ .focus-border:after{content: ""; position: absolute; top: 0; right: 0; width: 0; height: 2px; background-color: orange; transition: 0.2s; transition-delay: 0.2s;}
+.input-bordas ~ .focus-border:after{top: auto; bottom: 0; right: auto; left: 0; transition-delay: 0.6s;}
+.input-bordas ~ .focus-border i:before,
+.input-bordas ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: orange; transition: 0.2s;}
+.input-bordas ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0; transition-delay: 0.4s;}
+.input-bordas:focus ~ .focus-border:before,
+.input-bordas:focus ~ .focus-border:after{width: 100%; transition: 0.2s; transition-delay: 0.6s;}
+.input-bordas:focus ~ .focus-border:after{transition-delay: 0.2s;}
+.input-bordas:focus ~ .focus-border i:before,
+.input-bordas:focus ~ .focus-border i:after{height: 100%; transition: 0.2s;}
+.input-bordas:focus ~ .focus-border i:after{transition-delay: 0.4s;}
+
+
+/* BUTTON PESQUISAR */
+
+.btn {
+  width: 2.5em;
+  height: 2.2em;
+  margin: 0.5em;
+  background: orange;
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+ }
+ 
+ button:hover {
+  color: black;
+ }
+ 
+ button:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+ }
+ 
+ button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+ }
+
+
+ /* INPUT BUTTON */
+ .imput-button{
+  display: inline;
+ }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/style-tabela.css">
+    <link rel="stylesheet" href="../../css/style -tabela2.css">
     <title>Tabela Reclama mail</title>
 </head>
 <body>
@@ -22,9 +22,25 @@
     <h2 class="tituloStyle">Tabela Reclamações de emails</h2>
 
         <?php
-            $sql = "SELECT * FROM usuario ORDER BY id_usuario DESC";
+            if(!empty($_GET['pesquisa'])){
+                $data = $_GET['pesquisa'];
+                $sql = "SELECT * FROM usuario WHERE email LIKE '%$data%' ORDER BY id_usuario DESC";
+            }else{
+                $sql = "SELECT * FROM usuario ORDER BY id_usuario DESC";
+            }
+
             $result = $conn->query($sql);
         ?>
+
+        <br>
+        <div class="imput-button">
+            <label class="label">
+                <input type="text" name="busca" class="input-bordas" placeholder="Pesquise o EMAIL" id="pesquisa">
+                <span class="focus-border"> <i></i> </span>
+            </label>
+            <button class="btn" onclick="pesquisaData()"><img src="../../img/incon_pesquisar_black.png" alt="pesquisa" width="95%"></button>
+        </div>
+            
 
         <div class="m-5">
             <table class="table tabela table-bg">
@@ -57,9 +73,9 @@
 
       
 
-
+<script src="../../js/pesquisa.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
-</html>
+</html>                    

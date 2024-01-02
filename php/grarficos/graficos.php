@@ -43,6 +43,7 @@
                                         echo $dados['total'].",";
                                     } ?>],
                             backgroundColor: [
+                                'rgba(139, 69, 19)',
                                 'rgba(240, 128, 128)',
                                 'rgba(0, 128, 0)', 
                                 'rgba(152, 251, 152)', 

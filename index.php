@@ -35,6 +35,23 @@
                 <input type="email" name="email" class="input-bordas" placeholder="E-mail" required>
                 <span class="focus-border"> <i></i> </span>
             </label>
+
+            <select name="tipoUsuario" class="label input-bordas" required>
+            <option selected disabled>Qual e o Usuario</option>
+                    <?php
+                        $query = $conn->query("SELECT id_user, user_col_franq FROM usuario_col_franq ORDER BY user_col_franq ASC");    
+                        $registros = $query->fetchAll(PDO::FETCH_ASSOC);
+
+                        foreach($registros as $option){
+                            ?>
+                                <option value ="<?php echo $option['user_col_franq']; ?>">
+                                    <?php echo $option['user_col_franq']; ?>
+                                </option>
+                            <?php
+                        }
+                    ?>
+                    <span class="focus-border"> <i></i> </span>
+            </select>
     
             <select name="problema" class="label input-bordas" required>
             <option selected disabled>Selecione o problema</option>

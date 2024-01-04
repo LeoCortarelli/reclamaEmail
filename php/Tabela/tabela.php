@@ -48,6 +48,7 @@
                     <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Usuario</th>
                     <th scope="col">Problema</th>
                     <th scope="col">Região</th>
                     <th scope="col">Descricao</th>
@@ -60,6 +61,7 @@
                             echo "<tr>";
                             echo "<td>". $dados['nome']. "</td>";
                             echo "<td>". $dados['email']. "</td>";
+                            echo "<td>". $dados['usuario']. "</td>";
                             echo "<td>". $dados['problema']. "</td>";
                             echo "<td>". $dados['regiao']. "</td>";
                             echo "<td>". $dados['descricao']. "</td>";

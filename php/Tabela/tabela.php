@@ -65,7 +65,10 @@
                             echo "<td>". $dados['problema']. "</td>";
                             echo "<td>". $dados['regiao']. "</td>";
                             echo "<td>". $dados['descricao']. "</td>";
-                            echo "<td>". $dados['data_reclama']. "</td>";
+                            
+                            // Formatar a data para o padrão brasileiro
+                            $dataFormatada = date("d/m/Y", strtotime($dados['data_reclama']));
+                            echo "<td>". $dataFormatada. "</td>";
                             echo "<tr>";
                         }
                     ?>

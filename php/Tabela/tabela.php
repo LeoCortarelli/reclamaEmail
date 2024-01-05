@@ -1,6 +1,8 @@
-<?php include('../../conexao/conexao.php'); ?>
+<?php include('../../conexao/conexao.php'); 
+    mysqli_set_charset($conn, "utf8");
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,8 +44,8 @@
         </div>
             
         <div class="style-div-button-download">
-            <form action="" method="post">
-                <button type="button" class="button-download">
+            <form action="../process.php" method="post">
+                <button type="submit" class="button-download" name="submit">
                     <img src="../../img/download_black.png" alt="png_download" width="12%"><div class="div-button-espacamento"></div>Download</button>
             </form>
         </div>

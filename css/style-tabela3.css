@@ -181,3 +181,57 @@ body {
  .imput-button{
   display: inline;
  }
+
+
+ /* button download */
+ .style-div-button-download{
+    margin-top: 30px;
+    margin-left: 84%;
+ }
+
+.button-download{
+    width: 8.3em;
+    height: 2.2em;
+    font-size: 20px;
+    background: orange;
+    color: black;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.button-download:hover{
+    background-color: white;
+    color: black;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.button-download:after{
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;   
+}
+
+.button-download:hover:after{
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.div-button-espacamento{
+    display: inline-flex;
+    margin-left: 15px;
+}

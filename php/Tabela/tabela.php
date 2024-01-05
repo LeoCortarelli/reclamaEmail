@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/style -tabela2.css">
+    <link rel="stylesheet" href="../../css/style-tabela3.css">
     <title>Tabela Reclama mail</title>
 </head>
 <body>
@@ -41,6 +41,13 @@
             <button class="btn" onclick="pesquisaData()"><img src="../../img/incon_pesquisar_black.png" alt="pesquisa" width="95%"></button>
         </div>
             
+        <div class="style-div-button-download">
+            <form action="" method="post">
+                <button type="button" class="button-download">
+                    <img src="../../img/download_black.png" alt="png_download" width="12%"><div class="div-button-espacamento"></div>Download</button>
+            </form>
+        </div>
+        
 
         <div class="m-5">
             <table class="table tabela table-bg">

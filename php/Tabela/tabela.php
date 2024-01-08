@@ -1,5 +1,9 @@
-<?php include('../../conexao/conexao.php'); 
+<?php 
+    include('../../conexao/conexao.php'); 
     mysqli_set_charset($conn, "utf8");
+
+    // SISTEMA DE PAGINAÇÃO DA TABELA
+    include ('../paginacao.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,7 +32,8 @@
                 $data = $_GET['pesquisa'];
                 $sql = "SELECT * FROM usuario WHERE email LIKE '%$data%' ORDER BY id_usuario DESC";
             }else{
-                $sql = "SELECT * FROM usuario ORDER BY id_usuario DESC";
+                $sql = "SELECT * FROM usuario ORDER BY id_usuario DESC LIMIT {$limit} OFFSET {$offset}";
+                #$sql = "SELECT * FROM usuario ORDER BY id_usuario DESC";
             }
 
             $result = $conn->query($sql);
@@ -83,6 +88,21 @@
                     ?>
                 </tbody>
             </table>
+            <div>
+                <nav aria-label="Navegação de página exemplo">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="?page=1">Primeira</a></li>
+                        <?php 
+                            $primeira_pag = max($page - $intervalo_paginas, 1);
+                            $ultima_pag = min($numero_paginas, $page + $intervalo_paginas);
+
+                            for($pagina = $primeira_pag; $pagina <= $ultima_pag; $pagina++){ ?>
+                                <li class="page-item"><a class="page-link" href="?page=<?php echo "{$pagina}"; ?>"><?php echo "{$pagina}"; ?></a></li>
+                        <?php } // Fechando o for ?>
+                        <li class="page-item"><a class="page-link" href="?page=<?php echo $ultima_pag; ?>">Última</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
 
       
@@ -92,4 +112,4 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
-</html>                    
+</html>                  

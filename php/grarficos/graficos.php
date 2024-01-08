@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="../../css/style-graficoTelaInicial.css">
+    <link rel="stylesheet" href="../../css/style-tela-grafico.css">
     <title>Graficos Reclama mail</title>
 </head>
 <body>
@@ -122,7 +122,25 @@
         </div>
     </div>
     
-
+<!-- FOOTER -->
+<div class="footer-basic">
+        <footer>
+            <div class="social" style="margin-left: 45%;">
+                <a href="https://www.instagram.com/leo.cortarelli/"><img src="../../img/instagram.png" width="5%"></a>
+                <a href="https://www.linkedin.com/in/leonardocortarelli/" style="padding-left: 20px;"><img src="../../img/linkedin.png" width="5%"></a>
+                <a href="https://github.com/LeoCortarelli" style="padding-left: 20px;"><img src="../../img/github.png" width="5%"></a>   
+            </div>
+            <br>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="../../index.php">Home</a></li>
+                <li class="list-inline-item"><a href="../../opcoes/telaService.html">Services</a></li>
+                <li class="list-inline-item"><a href="../../opcoes/telaSobre.html">About</a></li>
+                <li class="list-inline-item"><a href="../../opcoes/telaTermos.html">Terms</a></li>
+                <li class="list-inline-item"><a href="../../opcoes/telaPoliticaPrivacy.html">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">Company LeoCortarelli © 2023</p>
+        </footer>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/style-tabela3.css">
+    <link rel="stylesheet" href="../../css/style-tabela4.css">
     <title>Tabela Reclama mail</title>
 </head>
 <body>
@@ -89,22 +89,41 @@
                 </tbody>
             </table>
             <div>
-                <nav aria-label="Navegação de página exemplo">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="?page=1">Primeira</a></li>
+                <nav aria-label="Navegação de página exemplo" class="style-nav">
+                    <ul class="pagination justify-content-end style-ul">
+                        <li class="page-item"><a class="page-link style-prim" href="?page=1"><<</a></li>
                         <?php 
                             $primeira_pag = max($page - $intervalo_paginas, 1);
                             $ultima_pag = min($numero_paginas, $page + $intervalo_paginas);
 
                             for($pagina = $primeira_pag; $pagina <= $ultima_pag; $pagina++){ ?>
-                                <li class="page-item"><a class="page-link" href="?page=<?php echo "{$pagina}"; ?>"><?php echo "{$pagina}"; ?></a></li>
+                                <li class="page-item"><a class="page-link style-li-a" href="?page=<?php echo "{$pagina}"; ?>"><?php echo "{$pagina}"; ?></a></li>
                         <?php } // Fechando o for ?>
-                        <li class="page-item"><a class="page-link" href="?page=<?php echo $ultima_pag; ?>">Última</a></li>
+                        <li class="page-item"><a class="page-link style-prim" href="?page=<?php echo $ultima_pag; ?>">>></a></li>
                     </ul>
                 </nav>
             </div>
         </div>
 
+        <!-- FOOTER -->
+    <div class="footer-basic">
+        <footer>
+            <div class="social" style="margin-left: 45%;">
+                <a href="https://www.instagram.com/leo.cortarelli/"><img src="../../img/instagram.png" width="5%"></a>
+                <a href="https://www.linkedin.com/in/leonardocortarelli/" style="padding-left: 20px;"><img src="../../img/linkedin.png" width="5%"></a>
+                <a href="https://github.com/LeoCortarelli" style="padding-left: 20px;"><img src="../../img/github.png" width="5%"></a>   
+            </div>
+            <br>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="../../index.php">Home</a></li>
+                <li class="list-inline-item"><a href="../../opcoes/telaService.html">Services</a></li>
+                <li class="list-inline-item"><a href="../../opcoes/telaSobre.html">About</a></li>
+                <li class="list-inline-item"><a href="../../opcoes/telaTermos.html">Terms</a></li>
+                <li class="list-inline-item"><a href="../../opcoes/telaPoliticaPrivacy.html">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">Company LeoCortarelli © 2023</p>
+        </footer>
+    </div>
       
 
 <script src="../../js/pesquisa.js"></script>

@@ -23,7 +23,8 @@
     <h2 class="tituloStyle" style="text-align: center; font-weight: bold; margin-top: 20px; font-size: 50px; width: 100%; margin-left: 30px;">Gráficos</h2>
     <div style="display: inline-flex; margin-left: 15%;">
         <?php
-            $sql = "SELECT regiao, COUNT(*) as total FROM usuario GROUP BY regiao";
+            #$sql = "SELECT regiao, COUNT(*) as total FROM usuario GROUP BY regiao";
+            $sql = "SELECT problema, COUNT(*) as total FROM usuario GROUP BY problema";
             $result = $conn->query($sql);
         ?>
         <div style="display: block; margin-top: 50px;">
@@ -36,26 +37,16 @@
                 document.addEventListener("DOMContentLoaded", function() {
                     var ctx = document.getElementById('graficoPizza').getContext('2d');
                     var data = {
-                        labels: [<?php while($dados = mysqli_fetch_assoc($result)) { echo "'".$dados['regiao']."',"; } ?>],
+                        labels: [<?php while($dados = mysqli_fetch_assoc($result)) { echo "'".$dados['problema']."',"; } ?>],
                         datasets: [{
                             data: [<?php mysqli_data_seek($result, 0); 
                                     while($dados = mysqli_fetch_assoc($result)) { 
                                         echo $dados['total'].",";
                                     } ?>],
                             backgroundColor: [
-                                'rgb(0, 128, 128)',
-                                'rgba(255, 0, 255)',
-                                'rgba(139, 69, 19)',
-                                'rgba(240, 128, 128)',
-                                'rgba(0, 128, 0)', 
-                                'rgba(152, 251, 152)', 
-                                'rgba(255, 166, 0)', 
-                                'rgba(255, 0, 0)', 
-                                'rgba(0, 255, 255)', 
-                                'rgba(128, 255, 0)', 
-                                'rgba(255, 255, 0)', 
                                 'rgba(0, 0, 255)', 
-                                'rgba(105, 105, 105)' 
+                                'rgba(0, 255, 255)', 
+                                'rgba(124, 252, 0)' 
                             ],
                         }]
                     };
@@ -84,11 +75,12 @@
 
                 <?php
 
-                    $sql = "SELECT problema, COUNT(*) as total FROM usuario GROUP BY problema";
+                    #$sql = "SELECT problema, COUNT(*) as total FROM usuario GROUP BY problema";
+                    $sql = "SELECT regiao, COUNT(*) as total FROM usuario GROUP BY regiao";
                     $busca = mysqli_query($conn, $sql);
 
-                    while($dados = mysqli_fetch_array($busca)){ // buscando na tabela champions_league
-                        $nomeClube = $dados['problema'];
+                    while($dados = mysqli_fetch_array($busca)){
+                        $nomeClube = $dados['regiao'];
                         $titulosChampions = $dados['total'];
                     
 
@@ -111,7 +103,7 @@
 
                 var options = {
                     title: "Grafico dos Problemas",
-                    width: 400,    
+                    width: 750,    
                     height: 500,
                     bar: {groupWidth: "95%"},
                     legend: { position: "none" },

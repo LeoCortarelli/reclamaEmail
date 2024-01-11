@@ -28,7 +28,7 @@
             $result = $conn->query($sql);
         ?>
         <div style="display: block; margin-top: 50px;">
-            <h2>Gráfico de Reclamações por Região</h2>
+            <h2>Gráfico de Reclamações</h2>
             <br>
             <div style="width: 80%; margin: auto;">
                 <canvas id="graficoPizza"></canvas>
@@ -102,7 +102,7 @@
                                 2]);
 
                 var options = {
-                    title: "Grafico dos Problemas",
+                    title: "Grafico de Reclamações por Região",
                     width: 750,    
                     height: 500,
                     bar: {groupWidth: "95%"},

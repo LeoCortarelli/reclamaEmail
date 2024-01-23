@@ -71,7 +71,7 @@
             google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-                ["Element", "Titulos", { role: "style" } ], // Topo da tabela
+                ["Element", "Reclamações", { role: "style" } ], // Topo da tabela
 
                 <?php
 
